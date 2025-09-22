@@ -2,7 +2,7 @@
 
 set -e
 
-REPO_URL="https://github.com/rich-kids-of-tao/subnet"
+REPO_URL="https://github.com/your-repo/rich-kids-of-tao"
 BRANCH="master"
 CHECK_INTERVAL=1800
 
@@ -20,6 +20,9 @@ echo "Starting Rich Kids of TAO auto-updater"
 echo "NETUID: $NETUID"
 echo "WALLET_NAME: $WALLET_NAME"
 echo "WALLET_HOTKEY: $WALLET_HOTKEY"
+
+echo "Initial setup - installing dependencies..."
+pip install -e .
 
 stop_validator() {
     echo "Stopping validator..."
@@ -41,8 +44,9 @@ while true; do
 
     if [ "$LOCAL_COMMIT" = "$REMOTE_COMMIT" ]; then
         echo "No updates. Checking if validator is running..."
-        if ! pm2 list | grep -q "rich-kids-validator"; then
-            echo "Validator not running, starting..."
+        if ! pm2 list | grep -q "rich-kids-validator.*online"; then
+            echo "Validator not running or crashed, starting..."
+            stop_validator
             start_validator
         else
             echo "Validator running. Nothing to do."
@@ -56,7 +60,7 @@ while true; do
         pm2 save
         echo "Update complete"
     fi
-
+    
     echo "Sleeping for $CHECK_INTERVAL seconds..."
     sleep "$CHECK_INTERVAL"
 done
