@@ -3,7 +3,7 @@
 set -e
 
 REPO_URL="https://github.com/rich-kids-of-tao/subnet"
-BRANCH="main"
+BRANCH="master"
 CHECK_INTERVAL=1800
 
 if [ $# -lt 3 ]; then
