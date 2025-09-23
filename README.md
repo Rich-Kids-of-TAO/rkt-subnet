@@ -4,7 +4,7 @@ The ultimate proof-of-wealth Bittensor subnet where your TAO balance is your tal
 
 ## What is Rich Kids of TAO?
 
-Rich Kids of TAO is a Bittensor subnet that rewards participants based on their TAO wealth. The more TAO you hold (liquid + staked), the higher your rewards.
+Rich Kids of TAO is a Bittensor subnet that distributes rewards according to participants’ TAO holdings. The more alpha you contribute across all the subnets, and the greater your TAO balance (both liquid and staked), the larger your rewards will be.
 
 ## How it Works
 
