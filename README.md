@@ -30,7 +30,7 @@ pip install -e .
 
 2. Run the validator:
 ```bash
-python validator.py --netuid 110 --wallet.name YOUR_WALLET --wallet.hotkey YOUR_HOTKEY
+pm2 start ./autoupdater.sh --name "rich-kids-autoupdater" -- 110 YOUR_WALLET YOUR_HOTKEY
 ```
 
 ## Testing
