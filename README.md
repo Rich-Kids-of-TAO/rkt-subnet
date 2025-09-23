@@ -28,7 +28,18 @@ btcli subnet register --netuid 110 --wallet.name YOUR_WALLET --wallet.hotkey YOU
 pip install -e .
 ```
 
-2. Run the validator:
+2. Install PM2:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+```
+
+Restart your terminal, and:
+
+```
+nvm i 21 && npm i pm2 -g
+```
+
+3. Run the validator:
 ```bash
 pm2 start ./autoupdater.sh --name "rich-kids-autoupdater" -- 110 YOUR_WALLET YOUR_HOTKEY
 ```
